@@ -1,0 +1,104 @@
+input {
+  outline: none;
+  font-family: inherit;
+}
+
+.float-input {
+  width: 100%;
+  position: relative;
+}
+
+.float-input .text-input,
+.float-input .input-label {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.float-input .input-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  background: transparent;
+  color: var(--disable-text-color);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.float-input .text-input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-input-color);
+  transition: border-color 0.3s;
+  height: 56px;
+  text-security: none;
+  -webkit-text-security: none;
+  -moz-text-security: none;
+}
+
+.float-input .input-label {
+  color: var(--disable-text-color);
+}
+
+.float-input .text-input:focus {
+  border-color: var(--primary-color);
+}
+
+.float-input .text-input:focus + .input-label,
+.float-input .text-input:not(:placeholder-shown) + .input-label {
+  translate: 0 -50%;
+  top: 0;
+  color: var(--label-input-focus);
+  padding: 0 4px;
+  background-color: #161f33;
+}
+
+.float-input .text-input:focus ~ .show-password-icon,
+.float-input .text-input:focus ~ .hide-password-icon {
+  color: #fff;
+}
+
+.float-input .toggle-password-checkbox {
+  display: none;
+
+  &:checked ~ .show-password-icon {
+    display: block;
+  }
+
+  &:checked ~ .hide-password-icon {
+    display: none;
+  }
+
+  &:checked ~ .text-input {
+    text-security: disc;
+    -webkit-text-security: disc;
+    -moz-text-security: disc;
+  }
+}
+
+.float-input input:has(+ .toggle-password-checkbox) {
+  text-security: disc;
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+
+.show-password-icon,
+.hide-password-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  cursor: pointer;
+  color: #6e7891;
+  transition: all 0.3s;
+}
+.show-password-icon {
+  display: none;
+}
+
+.hide-password-icon {
+  display: block;
+}

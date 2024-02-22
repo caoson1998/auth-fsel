@@ -1,0 +1,19 @@
+.or-separate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  font-family: Inter;
+  font-weight: 400;
+  width: 100%;
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #42558a;
+  }
+}

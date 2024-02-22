@@ -1,0 +1,23 @@
+.text-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  line-height: 1.27;
+  font-weight: 600;
+  color: var(--white-color);
+  white-space: nowrap;
+
+  a {
+    color: var(--secondary-color);
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 1.8rem;
+    position: relative;
+    margin-top: 200px;
+    width: 100%;
+    text-align: center;
+    }
+}

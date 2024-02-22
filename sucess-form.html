@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm OTP</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/pages/success_form.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="language-container" id="languageContainer">
+        <div class="language" onclick="onClickLanguage(event)">
+          <span class="language_name">Eng</span>
+          <img src="./assets/icons/eng-icon.svg" alt="" class="language_image" />
+        </div>
+        <div id="languageDropdown" class="language-dropdown">
+          <div class="language-dropdown-item">
+            <span class="language_name">Vn</span>
+            <img src="./assets/icons/vn-icon.svg" alt="" class="language_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="./assets/img/fsel-logo.svg" alt="fsel-logo" class="logo" />
+        <img src="./assets/img/success-form.svg" alt="" class="logo" />
+
+        <h1 class="title">Success</h1>
+        <p class="sub-title success-sub-title">
+          Congratulations, your account has been successfully created.
+        </p>
+
+        <a  href="/login.html" class="btn">Log in now</a>
+      </div>
+    </main>
+  </body>
+  <script>
+    function onClickLanguage(event) {
+      event.stopPropagation()
+        const languageContainer = document.getElementById("languageContainer");
+        languageContainer.classList.toggle("show");
+      }
+
+      window.onclick = function(event) {
+        const languageContainer = document.getElementById("languageContainer");
+        if (languageContainer.classList.contains('show')) {
+          languageContainer.classList.remove("show");
+        }
+      }
+  </script>
+</html>
